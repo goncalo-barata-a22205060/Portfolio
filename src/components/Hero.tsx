@@ -74,7 +74,17 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-
+        <div className="relative w-[720px] h-[620px] mx-auto">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute w-[600px] h-[500px] border-[12px] border-[#60A5FA] transform translate-x-12 rounded-xl shadow-[20px_15px_50px_rgba(0,0,0,0.4)] transition-all duration-200 ease-in-out hover:scale-100 hover:brightness-90 hover:translate-y-[-5px]">
+              <img
+                src="/imagem_inicial.png"
+                alt="Gonçalo Barata"
+                className="w-full h-full object-cover rounded-lg border-none transition-all duration-200 ease-in-out"
+              />
+            </div>
+          </div>
+        </div>
 
 
 
