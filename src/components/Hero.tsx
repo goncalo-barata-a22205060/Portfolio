@@ -1,34 +1,33 @@
-
 import React, { useEffect, useRef } from 'react';
 import SocialLinks from './SocialLinks';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!heroRef.current) return;
-      
+
       const { clientX, clientY } = e;
       const { left, top, width, height } = heroRef.current.getBoundingClientRect();
-      
+
       const x = (clientX - left) / width - 0.5;
       const y = (clientY - top) / height - 0.5;
-      
+
       heroRef.current.style.transform = `perspective(1000px) rotateY(${x * 2}deg) rotateX(${y * -2}deg)`;
     };
-    
+
     const resetTransform = () => {
       if (!heroRef.current) return;
       heroRef.current.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
     };
-    
+
     const element = heroRef.current;
     if (element) {
       element.addEventListener('mousemove', handleMouseMove as EventListener);
       element.addEventListener('mouseleave', resetTransform);
     }
-    
+
     return () => {
       if (element) {
         element.removeEventListener('mousemove', handleMouseMove as EventListener);
@@ -36,7 +35,7 @@ const Hero: React.FC = () => {
       }
     };
   }, []);
-  
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 pb-0">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white to-gray-50"></div>
@@ -74,9 +73,9 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative w-[720px] h-[620px] mx-auto">
+        <div className="relative w-full sm:w-[480px] md:w-[720px] h-[620px] mx-auto">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="absolute w-[600px] h-[500px] border-[12px] border-[#60A5FA] transform translate-x-12 rounded-xl shadow-[20px_15px_50px_rgba(0,0,0,0.4)] transition-all duration-200 ease-in-out hover:scale-100 hover:brightness-90 hover:translate-y-[-5px]">
+            <div className="absolute w-full h-full border-[12px] border-[#60A5FA] transform translate-x-12 rounded-xl shadow-[20px_15px_50px_rgba(0,0,0,0.4)] transition-all duration-200 ease-in-out hover:scale-100 hover:brightness-90 hover:translate-y-[-5px]">
               <img
                 src="/imagem_inicial.png"
                 alt="Gonçalo Barata"
@@ -86,11 +85,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-
-
-
       </div>
-
     </section>
   );
 };
