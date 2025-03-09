@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
             Hello World
           </span>
 
-          <h1 className="text-8xl md:text-8xl lg:text-8xl font-bold leading-tight text-portfolio-dark-gray mb-5 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-8xl lg:text-8xl font-bold leading-tight text-portfolio-dark-gray mb-5 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
             Gonçalo Costa Barata
           </h1>
 
@@ -73,7 +73,8 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative w-full sm:w-[480px] md:w-[720px] h-[620px] mx-auto">
+        {/* Imagem escondida no mobile */}
+        <div className="relative w-full sm:w-[480px] md:w-[720px] h-[620px] mx-auto hidden sm:block">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="absolute w-full h-full border-[12px] border-[#60A5FA] transform translate-x-12 rounded-xl shadow-[20px_15px_50px_rgba(0,0,0,0.4)] transition-all duration-200 ease-in-out hover:scale-100 hover:brightness-90 hover:translate-y-[-5px]">
               <img
@@ -84,7 +85,6 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
